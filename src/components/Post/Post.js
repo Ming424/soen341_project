@@ -6,6 +6,7 @@ import Comment from "../Comment";
 import { green } from '@material-ui/core/colors';
 import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
 import ChatBubbleOutlineOutlined from '@material-ui/icons/ChatBubbleOutlineOutlined';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
 
 
@@ -61,19 +62,54 @@ function Post(props) {
 
   // };
 
+  const followAction = () =>{
+
+    //If; logged-in user has already followed the another user and
+    // is trying to follow them again, simply display that "You have already followed 'Username!'"
+    //Insert code here
+    if(!true){
+      console.log("Entered the if")
+    }
+    //Else if; Logged-in user cannot follow himself, simply display that "You cannot follow yourself!'"
+    //Insert code here
+    else if (false){
+      console.log("Entered the else if")
+    }
+    //Else; Logged-in user is trying to follow a user that is not themselves nor that they are
+    //already follwing, simply proceed and display a success message "You have succesfully followed 'Username'" 
+    else{
+      console.log("Entered the else")
+
+    }
+  }
+
   const classes = useStyles();
    
   return (
     <div className="App">
       <Card className={classes.card}>
+        
         <CardHeader
          avatar={
           <Avatar className={classes.avatar}>
             A
           </Avatar>
         }
+
+        action = {
+          <IconButton>
+          <PersonAddIcon onClick = {followAction}/>
+          </IconButton>
+        }
+        /*
+        <Button>
+          <PersonAddIcon/>
+        </Button>
+        */
+
         title="Username"
         subheader="Date of the post"
+
         style={{textAlign:"left"}}
         />
         <CardContent style={{textAlign:"left"}}>
